@@ -47,11 +47,11 @@ livingroomTInF = livingroom . tInF
 -- switch to lightOn and heatingOn
 roomSwitch :: Traversal' Room Bool
 roomSwitch fn (Room t doorOpen lightOn heatingOn)
-  = (\l h -> Room t doorOpen l h) <$> fn lightOn <*> fn heatingOn
+  = (Room t doorOpen) <$> fn lightOn <*> fn heatingOn
 
 rooms :: Traversal' House Room
 rooms fn (House name room1 room2)
-  = (\r1 r2 -> House name r1 r2) <$> fn room1 <*> fn room2
+  = (House name) <$> fn room1 <*> fn room2
 
 masterSwitch :: Traversal' House Bool
 masterSwitch = rooms . roomSwitch
