@@ -1,5 +1,6 @@
 lensPlay
 ========
+[![Build Status](https://travis-ci.org/elisehuard/lensPlay.svg?branch=master)](https://travis-ci.org/elisehuard/lensPlay)
 
 playing with Haskell lenses (examples for blog post)
 
